@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=68.0.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "Youtube Playlist Extractor"
+version = "0.1.0"
+description = "Export YouTube playlists to CSV, JSON, or plain text. Extract video titles, URLs, durations, and metadata with one command."
+readme = "README.md"
+license = {file = "LICENSE"}
+requires-python = ">=3.11"
+authors = [
+    {name = "ForestForesuto"}
+]
+
+dependencies = [
+    "google-api-python-client>=2.0.0",
+    "google-auth-oauthlib>=1.0.0",
+    "python-dotenv>=1.0.0",
+    "requests>=2.28.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "ruff>=0.4.0",
+    "pip-tools>=7.0.0",
+    "uv>=0.5.0",
+]
+
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "N", "UP", "B", "C4", "SIM", "T20"]
+ignore = ["T201", "T203"]
+
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
